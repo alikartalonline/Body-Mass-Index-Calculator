@@ -1,0 +1,17 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(189, 191, 193);
+}
+
+section{
+margin-top: 10%;
+}
+
+.bmi{
+  border: 2px solid red;
+  height: 400px;
+  width: 70%;
+  border-radius: 0.9em;
+}
