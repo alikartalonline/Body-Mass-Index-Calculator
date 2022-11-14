@@ -1,7 +1,8 @@
 import React from 'react';
-import { useFormik, Field } from 'formik';
+import { useFormik } from 'formik';
 
-function Homepage() {
+function Homepage({setPage, setGender, setWeight, setHeight}) {
+
   const formik = useFormik({
     initialValues: {
       gender: '',
@@ -10,8 +11,11 @@ function Homepage() {
     },
     onSubmit: async (values, bag) => {
       console.log("values :", values)
+      // console.log("BAG :", bag)
       try {
-        console.log(values);
+        setGender(values.gender)
+        setWeight(values.weight)
+        setHeight(values.height)
       } catch (e) {
         bag.setErrors({ general: e.response.data.message });
         console.log('errors :', e);
@@ -20,8 +24,8 @@ function Homepage() {
   });
   // values: Form'daki datalar,
   // bag: O form üzerinde yapabileceğimiz bir takım işlemler var,
-  // onları bize sağlıyor; örneğin formu resetlemek gibi
-
+  // onları bize sağlıyor; örneğin formu resetlemek gibi  
+  
   return (
     <section className="container">
       <div className="row">
@@ -113,7 +117,11 @@ function Homepage() {
               <div className='col d-flex mt-4'>
                 <div className='col-9'></div>
                 <div>
-                  <button type='submit' className='btn btn-primary'>Calculate</button>
+                  <button 
+                  type='submit' 
+                  className='btn btn-primary'
+                  onClick={() => setPage("Calculate")}
+                  >Calculate</button>
                 </div>
               </div>
 
