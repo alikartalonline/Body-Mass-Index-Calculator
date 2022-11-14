@@ -36,23 +36,23 @@ function Homepage() {
               <div className="col-12 d-flex mt-3">
                 <div className="col"></div>
 
-                <h3>Gender: </h3>
+                <h3 className='ms-4'>Gender: </h3>
 
-                <div className='ms-3'>
+                <div className='ms-3 ms-5'>
                   <div className=' form-check' >
-                    <input class="form-check-input" type="radio" name="gender" value="male" id="flexRadioDefault1"
+                    <input className="form-check-input" type="radio" name="gender" value="male" id="flexRadioDefault1"
                       onChange={formik.handleChange}
                     />
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <label className="form-check-label" htmlFor="flexRadioDefault1">
                       Male
                     </label>
                   </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" value="female" id="flexRadioDefault2" 
+                  <div className="form-check">
+                    <input className="form-check-input" type="radio" name="gender" value="female" id="flexRadioDefault2"
                       onChange={formik.handleChange}
-                    
+
                     />
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <label className="form-check-label" htmlFor="flexRadioDefault2">
                       Female
                     </label>
                   </div>
@@ -67,8 +67,8 @@ function Homepage() {
               <div className='col-12 d-flex mt-2'>
                 <div className='col'></div>
 
-                <h3>enter your height: </h3>
-                <div className="form-floating mt-2 col-4" >
+                <h3>Enter Your Height: </h3>
+                <div className="form-floating mt-2 col-4 ms-4" >
                   <input
                     type="number"
                     className="form-control"
@@ -90,8 +90,8 @@ function Homepage() {
               <div className='col-12 d-flex mt-2'>
                 <div className='col'></div>
 
-                <h3>enter your weight: </h3>
-                <div className="form-floating mt-2 col-4" >
+                <h3>Enter Your Weight: </h3>
+                <div className="form-floating mt-2 col-4 ms-4" >
                   <input
                     type="number"
                     className="form-control"
@@ -110,19 +110,11 @@ function Homepage() {
 
 
               {/* BUTTON*/}
-              <div className='col-12 d-flex mt-1'>
-                <div className='col'></div>
-
-                <div className=" col-1">
-                  <button
-                    type="submit"
-                    className="privacy-button"
-                  >
-                    Devam
-                  </button>
+              <div className='col d-flex mt-4'>
+                <div className='col-9'></div>
+                <div>
+                  <button type='submit' className='btn btn-primary'>Calculate</button>
                 </div>
-
-                <div className='col'></div>
               </div>
 
 

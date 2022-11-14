@@ -6,12 +6,22 @@ body{
 }
 
 section{
-margin-top: 10%;
+margin-top: 5%;
 }
 
 .bmi{
-  border: 2px solid red;
+  border: 2px solid rgb(0, 119, 255);
   height: 400px;
   width: 70%;
   border-radius: 0.9em;
+}
+
+form{
+  float: left;
+}
+
+h3{
+  font-size: 1.6em;
+  font-family: monospace;
+  letter-spacing: -1px;
 }
