@@ -35,13 +35,39 @@ function Calculate({ gender, weight, height, setPage }) {
         <section className="container">
             <div className="row">
 
-                <div className="bmi">
-                    <h3>Gender: {gender}</h3>
-                    <h3>Your Body Surface Area: {newHeight}</h3>
-                    <h3>Your Body Weight: {weight}</h3>
-                    <h3>Your Body Mass Index (BMI): {bmi().toFixed(2)}</h3>
-                    <h3>Calculation result: {bmiResult()} </h3>
-                    <button className='btn btn-danger' onClick={() => setPage("") }>Reset</button>
+                <div className='row'>
+                    <div 
+                    // className="calculate d-flex"
+                    className={
+                        (bmi() >= 0 && bmi() <= 18.4) ? "border border-2 border-warning calculate d-flex" :
+                        (bmi() >= 18.5 && bmi() <= 24.9) ? "border border-2 border-success calculate d-flex" :
+                        (bmi() >= 25 && bmi() <= 29.9) ? "border border-2 border-primary calculate d-flex" :
+                        (bmi() >= 30 && bmi() <= 34.9) ? "border border-2 border-dark calculate d-flex" :
+                        (bmi() > 35) ? "border border-2 border-danger calculate d-flex" : "border border-2 calculate d-flex"
+                    }
+                    
+                    >
+                        <div className='col-8'>
+                        <h3>Gender: {gender}</h3>
+                        <h3>Your Body Surface Area: {newHeight}</h3>
+                        <h3>Your Body Weight: {weight}</h3>
+                        <h3>Your Body Mass Index (BMI): {bmi().toFixed(2)}</h3>
+                        <h3>Calculation result: {bmiResult()} </h3>
+                        <button className='btn btn-danger' onClick={() => setPage("")}>Reset</button>
+                        </div>
+
+                        <div className='col-4 call'>
+                        <ul>
+                            <h3>Yaş aralığına göre ise kişinin ideal vücut kitle indeksi şu şekildedir:</h3>
+                            <li>19-24 Yaş: 19-24 BMI.</li>
+                            <li>25-34 Yaş: 20-25 BMI.</li>
+                            <li>35-44 Yaş: 21-26 BMI</li>
+                            <li>45-54 Yaş: 22-27 BMI.</li>
+                            <li>55-64 Yaş: 23-28 BMI.</li>
+                            <li>65 Yaş ve üzeri: 24-29 BMI.</li>
+                        </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>
