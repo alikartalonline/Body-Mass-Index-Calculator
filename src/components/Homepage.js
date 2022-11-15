@@ -109,7 +109,7 @@ function Homepage({setPage, setGender, setWeight, setHeight}) {
                   <label htmlFor="floatingInput">weight</label>
                 </div>
 
-                <div className='col ms-2 cm'>cm ( Örn. 70 ) </div>
+                <div className='col ms-2 cm'>kg ( Örn. 70 ) </div>
               </div>
 
 
