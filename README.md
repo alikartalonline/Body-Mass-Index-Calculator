@@ -5,4 +5,4 @@
 
 ### Loading . . .
 
-<img src="https://github.com/alikartalonline/Body-Mass-Index-Calculator/blob/main/public/gif/coffee.gif" width="800" height="400" alt="BMI" title="BMI">
+<img src="https://github.com/alikartalonline/Body-Mass-Index-Calculator/blob/main/public/gif/coffee.gif" width="600" height="300" alt="BMI" title="BMI">
