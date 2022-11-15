@@ -40,7 +40,7 @@ function Homepage({setPage, setGender, setWeight, setHeight}) {
               <div className="col-12 d-flex mt-3">
                 <div className="col"></div>
 
-                <h3 className='ms-4'>Gender: </h3>
+                <h3 className='ms-4 pt-2'>Gender: </h3>
 
                 <div className='ms-3 ms-5'>
                   <div className=' form-check' >
@@ -71,7 +71,7 @@ function Homepage({setPage, setGender, setWeight, setHeight}) {
               <div className='col-12 d-flex mt-2'>
                 <div className='col'></div>
 
-                <h3>Enter Your Height: </h3>
+                <h3 className='pt-3'>Enter Your Height: </h3>
                 <div className="form-floating mt-2 col-4 ms-4" >
                   <input
                     type="number"
@@ -86,7 +86,7 @@ function Homepage({setPage, setGender, setWeight, setHeight}) {
                   <label htmlFor="floatingInput">height</label>
                 </div>
 
-                <div className='col'></div>
+                <div className='col ms-2 cm'>cm (Örn. 180)</div>
               </div>
 
 
@@ -94,7 +94,7 @@ function Homepage({setPage, setGender, setWeight, setHeight}) {
               <div className='col-12 d-flex mt-2'>
                 <div className='col'></div>
 
-                <h3>Enter Your Weight: </h3>
+                <h3 className='pt-3'>Enter Your Weight: </h3>
                 <div className="form-floating mt-2 col-4 ms-4" >
                   <input
                     type="number"
@@ -109,7 +109,7 @@ function Homepage({setPage, setGender, setWeight, setHeight}) {
                   <label htmlFor="floatingInput">weight</label>
                 </div>
 
-                <div className='col'></div>
+                <div className='col ms-2 cm'>cm ( Örn. 70 ) </div>
               </div>
 
 
