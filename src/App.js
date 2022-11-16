@@ -10,14 +10,14 @@ import { useState } from 'react';
 
 function App() {
 
-  const [page, setPage] = useState("");
+  const [page, setPage] = useState(true);
   const [gender, setGender] = useState("");
   const [weight, setWeight] = useState([]);
   const [height, setHeight] = useState([]);
 
-  console.log("gender app:", gender)
-  console.log("height app:", height)
-  console.log("weight app:", weight)
+  // console.log("gender app:", gender)
+  // console.log("height app:", height)
+  // console.log("weight app:", weight)
 
 
 
@@ -25,17 +25,19 @@ function App() {
     <div>
       <Header />
 
-      <div className={page == "" ? "" : "finalPage"}>
+      <div className={page == true ? "" : "finalPage"}>
         <Homepage
           setPage={setPage}
           setGender={setGender}
           setWeight={setWeight}
           setHeight={setHeight}
+          height={height}
+          weight={weight}
         />
 
       </div>
 
-      <div className={page == "" ? "finalPage" : ""}>
+      <div className={page == true ? "finalPage" : ""}>
         <Calculate gender={gender} weight={weight} height={height} setPage={setPage}/>
       </div>
 

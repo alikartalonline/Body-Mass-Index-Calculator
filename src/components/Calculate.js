@@ -49,12 +49,12 @@ function Calculate({ gender, weight, height, setPage }) {
                     >
                         <div className='col-8'>
                         <h3>Gender: {gender}</h3>
-                        <h3>Your Body Surface Area: {newHeight}</h3>
+                        <h3>Your Body Surface Area: {newHeight} </h3>
                         <h3>Your Body Weight: {weight}</h3>
                         <h3>Your Ideal Body Weight: 00 </h3>
                         <h3>Your Body Mass Index (BMI): {bmi().toFixed(2)}</h3>
                         <h3>Calculation result: {bmiResult()} </h3>
-                        <button className='btn btn-danger' onClick={() => setPage("")}>Reset</button>
+                        <button className='btn btn-danger' onClick={() => setPage(true)}>Reset</button>
                         </div>
 
                         <div className='col-4 call'>

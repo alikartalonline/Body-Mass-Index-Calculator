@@ -1,49 +1,54 @@
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: rgb(189, 191, 193);
 }
 
-section{
-margin-top: 5%;
+section {
+  margin-top: 5%;
 }
 
-.bmi{
-  border: 2px solid rgb(0, 119, 255);
+.bmi {
+  /* border: 2px solid rgb(0, 119, 255); */
+  border: 2px solid ;
   height: 400px;
-  width: 70%;
-  border-radius: 0.9em;
+  width: 50%;
+  border-radius: 1em;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #9bd3f6 0%, #5decdb 90%);
+
+  box-shadow: 30px 40px 60px #1bffff, -39px -30px 60px #1dffff;
 }
 
-.calculate{
+.calculate {
   /* border: 2px solid rgb(238, 55, 10); */
   height: 400px;
   width: 100%;
   border-radius: 0.9em;
 }
 
-.call{
+.call {
   border-left: 2px solid red;
   height: 90%;
   margin-top: 20px;
 }
 
-form{
+form {
   float: left;
 }
 
-h3{
+h3 {
   font-size: 1.6em;
   font-family: monospace;
   letter-spacing: -1px;
 }
 
-.finalPage{
+.finalPage {
   display: none;
 }
 
-.cm{
+.cm {
   white-space: nowrap;
   font-size: 1.03em;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
