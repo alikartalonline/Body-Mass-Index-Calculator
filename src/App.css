@@ -23,9 +23,13 @@ section {
 
 .calculate {
   /* border: 2px solid rgb(238, 55, 10); */
-  height: 400px;
+  /* height: 450px; */
+  min-height: fit-content;
   width: 100%;
   border-radius: 0.9em;
+  background-color: #A9C9FF;
+background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 90%);
+box-shadow: rgb(230, 114, 289) 0px 35px 70px -5px;
 }
 
 .call {
@@ -53,4 +57,16 @@ h3 {
   font-size: 1.03em;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin-top: 5%;
+}
+
+
+
+.calculate-result{
+  font-size: 23px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p{
+  margin-top: 1%;
+  padding: 10px;
 }
