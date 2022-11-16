@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from './Footer';
 import { useFormik } from 'formik';
 
 function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) {
@@ -18,7 +19,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
   }
 
 
-   const formik = useFormik({
+  const formik = useFormik({
     initialValues: {
       gender: '',
       height: '',
@@ -65,7 +66,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
   // onları bize sağlıyor; örneğin formu resetlemek gibi  
 
 
-   return (
+  return (
     <section className="container">
       <div className="row">
 
@@ -153,9 +154,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
                 onClick={() => setPage(false)}
               >Calculate</button>
             </div>
-
           </form>
-
 
         </div>
 
@@ -173,6 +172,11 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
                   height={430} width={400}
               />
           }
+        </div>
+
+        {/* alikartalonline footer  */}
+        <div className='col-6'>
+          <Footer />
         </div>
 
 
