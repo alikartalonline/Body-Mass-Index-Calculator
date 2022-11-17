@@ -34,7 +34,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
           return setHeight(values.height)
         }
         else {
-          return false ^ (alert("hata height"))
+          return false ^ (alert("Error ! - height is between 0-200"))
         }
       }
 
@@ -43,9 +43,10 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
           return setWeight(values.weight)
         }
         else {
-          return false ^ alert("hata weight");
+          return false ^ alert("Error ! - weight is between 0-200");
         }
       }
+
 
       try {
         heightAlert()
@@ -73,7 +74,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
         <div className="col-8 bmi">
           <form onSubmit={formik.handleSubmit}>
 
-            {/* MALE - FEMALE */}
+            {/* GENDER */}
             <div className=" d-flex mt-5 ms-5" >
 
               <h3 className='pt-2 col-5 ' >Gender: </h3>
@@ -81,7 +82,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
               <div className='ms-5'>
                 <div className=' form-check' >
                   <input className="form-check-input" type="radio" name="gender" value="Male" id="flexRadioDefault1"
-                    onChange={formik.handleChange}
+                    onChange={formik.handleChange} 
                   />
                   <label className="form-check-label" htmlFor="flexRadioDefault1">
                     Male
@@ -89,8 +90,8 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
                 </div>
                 <div className="form-check">
                   <input className="form-check-input" type="radio" name="gender" value="Female" id="flexRadioDefault2"
-                    onChange={formik.handleChange}
-                  />
+                    onChange={formik.handleChange} 
+                    />
                   <label className="form-check-label" htmlFor="flexRadioDefault2">
                     Female
                   </label>

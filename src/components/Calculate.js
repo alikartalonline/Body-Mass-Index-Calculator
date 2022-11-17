@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './Footer';
 
-function Calculate({ gender, weight, height, setPage }) {
+function Calculate({ gender, weight, height, setPage, setHeight, setGender, setWeight }) {
 
     let newHeight = height.toString().split("").slice(0, 1) + "." + height.toString().split("").join("").slice(1);
 
@@ -44,8 +44,16 @@ function Calculate({ gender, weight, height, setPage }) {
         else if (bmi() > 45) {
             return <p><span className='bg-dark text-white'>Aşırı Şişman</span><br /> Üçüncü derece obez kategorisinde olan bu kişilerde hastalık gelişme riski çok yüksektir. Hekim ve diyetisyen eşliğinde kilo verilmesi önerilir.</p>
         }
-    }
+    };
 
+
+    // RESET BUTTON 
+    const resetOnClick = () => {
+        setPage(true)
+        setGender("")
+        setHeight([])
+        setWeight([])
+    };
 
     return (
         <section className="container">
@@ -60,18 +68,67 @@ function Calculate({ gender, weight, height, setPage }) {
                                         (bmi() >= 30 && bmi() <= 34.9) ? "border border-2 border-dark calculate d-flex" :
                                             (bmi() > 35) ? "border border-2 border-danger calculate d-flex" : "border border-2 calculate d-flex"
                         }
-
                     >
+
                         <div className='col-8 mt-3 ms-2'>
-                            <h3>Gender: <span className={gender == "Male" ? 'calculate-result text-primary' : 'calculate-result text-danger'}>{gender}</span></h3>
-                            <h3>Your Body Surface Area: <span className='calculate-result text-success'>{newHeight} </span></h3>
-                            <h3>Your Body Weight: <span className='calculate-result bg-dark text-warning rounded-circle'><strong>{weight}</strong></span></h3>
-                            <h3>Your Ideal Body Weight: <span className='calculate-result bg-dark text-info rounded-circle fs-4'>{gender == "Male" ? Math.floor(idealKgMale()) : Math.floor(idealKgFemale())}</span> </h3>
-                            <h3>Your Body Mass Index (BMI): <span className='calculate-result text-primary'> {bmi().toFixed(2)}</span></h3>
-                            <h3 className='mt-4'><mark >Calculation result:</mark><span className='calculate-result'>{bmiResult()}</span> </h3>
+
+                            <h3>
+                                Gender: <span className={gender == "Male" ? 'calculate-result text-primary' : 'calculate-result text-danger'}>
+                                    {
+                                        gender == "" ? <span className='alert alert-danger fs-6' role="alert">"Error ! - Choose Gender"</span> : gender
+                                    }</span>
+                            </h3>
+
+                            <h3>
+                                Your Body Surface Area:
+                                <span className='calculate-result text-success'>
+                                    {
+                                        height == "" ? <span className='alert alert-warning fs-5' role="alert">"Error ! - height is between 0-200"</span> : newHeight
+                                    }
+                                </span>
+                            </h3>
+
+                            <h3>
+                                Your Body Weight:
+                                <span className='calculate-result bg-dark text-warning rounded-circle'>
+                                    <strong>
+                                        {
+                                            weight == "" ? <span className='alert alert-primary fs-6' role="alert">"Error ! - weight is between 0-200"</span> : weight
+                                        }
+                                    </strong>
+                                </span>
+                            </h3>
+
+                            <h3>
+                                Your Ideal Body Weight:
+                                <span className='calculate-result bg-dark text-info rounded-circle fs-4'>
+                                    {
+                                        gender == "Male" ? Math.floor(idealKgMale()) : Math.floor(idealKgFemale())
+                                    }
+                                </span>
+                            </h3>
+
+                            <h3>
+                                Your Body Mass Index (BMI):
+                                <span className='calculate-result text-primary'>
+                                    {
+                                        bmi().toFixed(2)
+                                    }
+                                </span>
+                            </h3>
+
+                            <h3 className='mt-4'><mark>Calculation result:</mark>
+                                <span className='calculate-result'>
+                                    {
+                                        bmiResult()
+                                    }
+                                </span>
+                            </h3>
 
 
-                            <button className='btn btn-danger mb-3' onClick={() => setPage(true)}>Reset</button>
+                            <button type='submit' className='btn btn-danger mb-3' onClick={() => resetOnClick()}>
+                                Reset
+                            </button>
                         </div>
 
                         <div className='col-4 call'>

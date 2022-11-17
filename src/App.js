@@ -38,7 +38,10 @@ function App() {
       </div>
 
       <div className={page == true ? "finalPage" : ""}>
-        <Calculate gender={gender} weight={weight} height={height} setPage={setPage}/>
+        <Calculate 
+        gender={gender} weight={weight} height={height} 
+        setPage={setPage} setHeight={setHeight} setWeight={setWeight} setGender={setGender}
+        /> 
       </div>
 
     </div>
