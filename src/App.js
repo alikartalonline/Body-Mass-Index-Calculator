@@ -15,11 +15,6 @@ function App() {
   const [weight, setWeight] = useState([]);
   const [height, setHeight] = useState([]);
 
-  // console.log("gender app:", gender)
-  // console.log("height app:", height)
-  // console.log("weight app:", weight)
-
-
 
    return (
     <div>
@@ -31,8 +26,6 @@ function App() {
           setGender={setGender}
           setWeight={setWeight}
           setHeight={setHeight}
-          height={height}
-          weight={weight}
         />
 
       </div>
@@ -40,7 +33,8 @@ function App() {
       <div className={page == true ? "finalPage" : ""}>
         <Calculate 
         gender={gender} weight={weight} height={height} 
-        setPage={setPage} setHeight={setHeight} setWeight={setWeight} setGender={setGender}
+        setGender={setGender} setPage={setPage} 
+        setHeight={setHeight} setWeight={setWeight} 
         /> 
       </div>
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from './Footer';
 import { useFormik } from 'formik';
 
-function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) {
+function Homepage({ setPage, setGender, setWeight, setHeight}) {
 
   const [gifs, setGifs] = useState("gif1")
 
@@ -30,7 +30,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
       // console.log("BAG :", bag)
 
       const heightAlert = () => {
-        if (values.height >= 0 && values.height <= 200) {
+        if (values.height >= 3 && values.height <= 200) {
           return setHeight(values.height)
         }
         else {
@@ -162,7 +162,6 @@ function Homepage({ setPage, setGender, setWeight, setHeight, height, weight }) 
         {/* GIFS content */}
         <div className='col-1'></div>
         <div className='col-4'>
-          {/* <img src="/assets/bmi.jpg" alt="bmi" height={600} width={800} /> */}
           {
             changeGif()
           }

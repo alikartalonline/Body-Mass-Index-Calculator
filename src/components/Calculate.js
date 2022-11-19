@@ -1,22 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from './Footer';
 
+import GifContent from './GifContent';
+
 function Calculate({ gender, weight, height, setPage, setHeight, setGender, setWeight }) {
+
+    const [resultGif, setResultGif] = useState("");
+    const [gifZ, setGifZ] = useState("")
+    const [gifN, setGifN] = useState("")
+    const [gifF, setGifF] = useState("")
+    const [gifS, setGifS] = useState("")
+    const [gifAS, setGifAS] = useState("")
 
     let newHeight = height.toString().split("").slice(0, 1) + "." + height.toString().split("").join("").slice(1);
 
     let inchHeight = (height / 2.54).toFixed(2);
 
-
-
     const idealKgMale = () => {
-        if (gender == 'Male') {
+        if (gender === 'Male') {
             return ((2.3 * (inchHeight - 60)) + 50)
         }
     };
 
     const idealKgFemale = () => {
-        if (gender == 'Female') {
+        if (gender === 'Female') {
             return ((2.3 * (inchHeight - 60)) + 45.5)
         }
     };
@@ -53,6 +60,12 @@ function Calculate({ gender, weight, height, setPage, setHeight, setGender, setW
         setGender("")
         setHeight([])
         setWeight([])
+        setResultGif("")
+        setGifZ("")
+        setGifN("")
+        setGifF("")
+        setGifS("")
+        setGifAS("")
     };
 
     return (
@@ -70,12 +83,12 @@ function Calculate({ gender, weight, height, setPage, setHeight, setGender, setW
                         }
                     >
 
-                        <div className='col-8 mt-3 ms-2'>
+                        <div className='col-6 mt-3 ms-2'>
 
                             <h3>
-                                Gender: <span className={gender == "Male" ? 'calculate-result text-primary' : 'calculate-result text-danger'}>
+                                Gender: <span className={gender === "Male" ? 'calculate-result text-primary' : 'calculate-result text-danger'}>
                                     {
-                                        gender == "" ? <span className='alert alert-danger fs-6' role="alert">"Error ! - Choose Gender"</span> : gender
+                                        gender === "" ? <span className='alert alert-danger fs-6' role="alert">"Error ! - Choose Gender"</span> : gender
                                     }</span>
                             </h3>
 
@@ -83,7 +96,7 @@ function Calculate({ gender, weight, height, setPage, setHeight, setGender, setW
                                 Your Body Surface Area:
                                 <span className='calculate-result text-success'>
                                     {
-                                        height == "" ? <span className='alert alert-warning fs-5' role="alert">"Error ! - height is between 0-200"</span> : newHeight
+                                        height === "" ? <span className='alert alert-warning fs-5' role="alert">"Error ! - height is between 0-200"</span> : newHeight
                                     }
                                 </span>
                             </h3>
@@ -93,7 +106,7 @@ function Calculate({ gender, weight, height, setPage, setHeight, setGender, setW
                                 <span className='calculate-result bg-dark text-warning rounded-circle'>
                                     <strong>
                                         {
-                                            weight == "" ? <span className='alert alert-primary fs-6' role="alert">"Error ! - weight is between 0-200"</span> : weight
+                                            weight === "" ? <span className='alert alert-primary fs-6' role="alert">"Error ! - weight is between 0-200"</span> : weight
                                         }
                                     </strong>
                                 </span>
@@ -103,7 +116,7 @@ function Calculate({ gender, weight, height, setPage, setHeight, setGender, setW
                                 Your Ideal Body Weight:
                                 <span className='calculate-result bg-dark text-info rounded-circle fs-4'>
                                     {
-                                        gender == "Male" ? Math.floor(idealKgMale()) : Math.floor(idealKgFemale())
+                                        gender === "Male" ? Math.floor(idealKgMale()) : Math.floor(idealKgFemale())
                                     }
                                 </span>
                             </h3>
@@ -126,9 +139,19 @@ function Calculate({ gender, weight, height, setPage, setHeight, setGender, setW
                             </h3>
 
 
-                            <button type='submit' className='btn btn-danger mb-3' onClick={() => resetOnClick()}>
+                            <button type='submit' className='btn btn-danger mb-3' 
+                            onClick={() => resetOnClick()}>
                                 Reset
                             </button>
+                        </div>
+
+                        <div className='col-2'>
+                            <GifContent bmi={bmi()} 
+                            resultGif={resultGif} setResultGif={setResultGif}
+                            gifZ={gifZ} setGifZ={setGifZ} gifN={gifN} setGifN={setGifN}
+                            gifF={gifF} setGifF={setGifF} gifS={gifS} setGifS={setGifS}
+                            gifAS={gifAS} setGifAS={setGifAS} resetOnClick={resetOnClick}
+                            />
                         </div>
 
                         <div className='col-4 call'>
