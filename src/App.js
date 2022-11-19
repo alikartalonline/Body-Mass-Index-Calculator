@@ -18,9 +18,9 @@ function App() {
 
    return (
     <div>
-      <Header />
+      <Header page={page} />
 
-      <div className={page == true ? "" : "finalPage"}>
+      <div className={page === true ? "" : "finalPage"}>
         <Homepage
           setPage={setPage}
           setGender={setGender}
@@ -30,7 +30,7 @@ function App() {
 
       </div>
 
-      <div className={page == true ? "finalPage" : ""}>
+      <div className={page === true ? "finalPage" : ""}>
         <Calculate 
         gender={gender} weight={weight} height={height} 
         setGender={setGender} setPage={setPage} 
@@ -40,6 +40,6 @@ function App() {
 
     </div>
   );
-}
+};
 
 export default App;

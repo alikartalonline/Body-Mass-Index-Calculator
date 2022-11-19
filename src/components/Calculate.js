@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import Footer from './Footer';
 
+// COMPONENTS
 import GifContent from './GifContent';
 
-function Calculate({ gender, weight, height, setPage, setHeight, setGender, setWeight }) {
+function Calculate({
+    gender, weight, height, setPage, setHeight, setGender, setWeight
+}) {
 
     const [resultGif, setResultGif] = useState("");
-    const [gifZ, setGifZ] = useState("")
-    const [gifN, setGifN] = useState("")
-    const [gifF, setGifF] = useState("")
-    const [gifS, setGifS] = useState("")
-    const [gifAS, setGifAS] = useState("")
+    const [gifZ, setGifZ] = useState("");
+    const [gifN, setGifN] = useState("");
+    const [gifF, setGifF] = useState("");
+    const [gifS, setGifS] = useState("");
+    const [gifAS, setGifAS] = useState("");
 
     let newHeight = height.toString().split("").slice(0, 1) + "." + height.toString().split("").join("").slice(1);
-
     let inchHeight = (height / 2.54).toFixed(2);
 
     const idealKgMale = () => {
@@ -69,17 +71,17 @@ function Calculate({ gender, weight, height, setPage, setHeight, setGender, setW
     };
 
     return (
-        <section className="container">
+        <section className="container mt-1">
             <div className="row">
 
                 <div className='row'>
                     <div
                         className={
                             (bmi() >= 0 && bmi() <= 18.4) ? "border border-2 border-warning calculate d-flex" :
-                                (bmi() >= 18.5 && bmi() <= 24.9) ? "border border-2 border-success calculate d-flex" :
-                                    (bmi() >= 25 && bmi() <= 29.9) ? "border border-2 border-primary calculate d-flex" :
-                                        (bmi() >= 30 && bmi() <= 34.9) ? "border border-2 border-dark calculate d-flex" :
-                                            (bmi() > 35) ? "border border-2 border-danger calculate d-flex" : "border border-2 calculate d-flex"
+                            (bmi() >= 18.5 && bmi() <= 24.9) ? "border border-2 border-success calculate d-flex" :
+                            (bmi() >= 25 && bmi() <= 29.9) ? "border border-2 border-primary calculate d-flex" :
+                            (bmi() >= 30 && bmi() <= 34.9) ? "border border-2 border-dark calculate d-flex" :
+                            (bmi() > 35) ? "border border-2 border-danger calculate d-flex" : "border border-2 calculate d-flex"
                         }
                     >
 
@@ -139,18 +141,18 @@ function Calculate({ gender, weight, height, setPage, setHeight, setGender, setW
                             </h3>
 
 
-                            <button type='submit' className='btn btn-danger mb-3' 
-                            onClick={() => resetOnClick()}>
+                            <button type='submit' className='btn btn-danger mb-3'
+                                onClick={() => resetOnClick()}>
                                 Reset
                             </button>
                         </div>
 
                         <div className='col-2'>
-                            <GifContent bmi={bmi()} 
-                            resultGif={resultGif} setResultGif={setResultGif}
-                            gifZ={gifZ} setGifZ={setGifZ} gifN={gifN} setGifN={setGifN}
-                            gifF={gifF} setGifF={setGifF} gifS={gifS} setGifS={setGifS}
-                            gifAS={gifAS} setGifAS={setGifAS} resetOnClick={resetOnClick}
+                            <GifContent bmi={bmi()}
+                                resultGif={resultGif} setResultGif={setResultGif}
+                                gifZ={gifZ} setGifZ={setGifZ} gifN={gifN} setGifN={setGifN}
+                                gifF={gifF} setGifF={setGifF} gifS={gifS} setGifS={setGifS}
+                                gifAS={gifAS} setGifAS={setGifAS} resetOnClick={resetOnClick}
                             />
                         </div>
 
@@ -175,6 +177,6 @@ function Calculate({ gender, weight, height, setPage, setHeight, setGender, setW
             </div>
         </section>
     )
-}
+};
 
 export default Calculate;

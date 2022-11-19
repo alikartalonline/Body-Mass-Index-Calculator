@@ -4,19 +4,19 @@ import { useFormik } from 'formik';
 
 function Homepage({ setPage, setGender, setWeight, setHeight}) {
 
-  const [gifs, setGifs] = useState("gif1")
+  const [gifs, setGifs] = useState("gif1");
 
   const changeGif = () => {
-    if (gifs == "gif1") {
+    if (gifs === "gif1") {
       setTimeout(() => {
         setGifs("gif2")
       }, 4000)
-    } else if (gifs == "gif2") {
+    } else if (gifs === "gif2") {
       setTimeout(() => {
         setGifs("gif1")
       }, 4000)
     }
-  }
+  };
 
 
   const formik = useFormik({
@@ -166,7 +166,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight}) {
             changeGif()
           }
           {
-            gifs == "gif1" ?
+            gifs === "gif1" ?
               <img src="/assets/w1.gif" alt="bmi"
                 height={430} width={400} /> : <img src="/assets/h1.gif" alt="bmi"
                   height={430} width={400}
@@ -184,6 +184,6 @@ function Homepage({ setPage, setGender, setWeight, setHeight}) {
       </div>
     </section>
   );
-}
+};
 
 export default Homepage;
