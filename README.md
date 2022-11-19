@@ -18,5 +18,5 @@ Your Body Mass Index
 
 <br>
 
-<img src="https://github.com/alikartalonline/Body-Mass-Index-Calculator/blob/main/public/gif/alikartalnonline-bmi.gif"width="800" height="400" alt="ToDoApp" title="ToDoApp">
+<img src="https://github.com/alikartalonline/Body-Mass-Index-Calculator/blob/main/public/gif/alikartalnonline-bmi.gif" width="800" height="400" alt="ToDoApp" title="ToDoApp">
 
