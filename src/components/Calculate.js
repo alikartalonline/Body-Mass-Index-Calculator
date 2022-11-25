@@ -98,7 +98,7 @@ function Calculate({
                                 Your Body Surface Area:
                                 <span className='calculate-result text-success'>
                                     {
-                                        height === "" ? <span className='alert alert-warning fs-5' role="alert">"Error ! - height is between 0-200"</span> : newHeight
+                                        height == "" ? <span className='alert alert-warning fs-5' role="alert">"Error ! - height is between 0-200"</span> : newHeight
                                     }
                                 </span>
                             </h3>
