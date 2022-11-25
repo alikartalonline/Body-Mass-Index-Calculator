@@ -7,7 +7,7 @@ function Header({ page }) {
 
             <h1>Vücut Kitle Endeksi Hesaplama</h1>
             
-            <p className='mt-3 col-8'>Aşağıdaki hesaplama aracında beden kitle endeksini öğrenmek istediğiniz kişinin <b className='text-danger'>"Cinsiyetini"</b> <em className='h6'>("Gender")</em> seçtikten sonra <kbd>"cm"</kbd> boyu ile  <kbd>"kg"</kbd> cinsinden ağırlığını giriniz ve <b className='text-primary'>"Calculate"</b> butonuna basınız. </p>
+            <p className='mt-3 col-8'>Aşağıdaki hesaplama aracında beden kitle endeksini öğrenmek istediğiniz kişinin <b className='text-danger'>"Cinsiyetini"</b> <em className='h6'>("Gender")</em> seçtikten sonra <kbd>"cm"</kbd> cinsinden boyu ile  <kbd>"kg"</kbd> cinsinden ağırlığını giriniz ve <b className='text-primary'>"Calculate"</b> butonuna basınız. </p>
 
             {
                 page === false ?
