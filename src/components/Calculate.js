@@ -63,11 +63,32 @@ function Calculate({
         setHeight([])
         setWeight([])
         setResultGif("")
-        setGifZ("")
-        setGifN("")
-        setGifF("")
-        setGifS("")
-        setGifAS("")
+
+        setTimeout(() => {
+            setGifZ("")
+        }, 3000)
+
+        setTimeout(() => {
+            setGifN("")
+        }, 3000)
+        
+        setTimeout(() => {
+            setGifF("")
+        }, 3000)
+
+        setTimeout(() => {
+            setGifS("")
+        }, 3000)
+
+        setTimeout(() => {
+            setGifAS("")
+        }, 3000)
+
+        // setGifZ("")
+        // setGifN("")
+        // setGifF("")
+        // setGifS("")
+        // setGifAS("")
     };
 
     return (
