@@ -3,7 +3,7 @@
 
 <br>
 
-### BMI v2: [Click to View](https://alikartalonline-bmi.netlify.app/)
+### BMI v3 Responsive: [Click to View](https://alikartalonline-bmi.netlify.app/)
 
 ```
 Your Body Surface Area
