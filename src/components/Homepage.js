@@ -71,7 +71,8 @@ function Homepage({ setPage, setGender, setWeight, setHeight}) {
     <section className="container">
       <div className="row">
 
-        <div className="col-8 bmi">
+        {/* BMI Calculate table */}
+        <div className="col-sm-12  col-lg-10 col-xl-8 order-1 order-lg-1 bmi">
           <form onSubmit={formik.handleSubmit}>
 
             {/* GENDER */}
@@ -160,8 +161,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight}) {
         </div>
 
         {/* GIFS content */}
-        <div className='col-1'></div>
-        <div className='col-4'>
+        <div className='col-sm-12  col-lg-2 col-xl-4 order-3  order-lg-2 ms-xl-auto'>
           {
             changeGif()
           }
@@ -175,7 +175,7 @@ function Homepage({ setPage, setGender, setWeight, setHeight}) {
         </div>
 
         {/* alikartalonline footer  */}
-        <div className='col-6'>
+        <div className='col-sm-12 col-md-9 col-lg-6 order-2 order-lg-3'>
           <Footer />
         </div>
 
