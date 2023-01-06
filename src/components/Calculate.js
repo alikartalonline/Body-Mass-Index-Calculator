@@ -95,18 +95,18 @@ function Calculate({
         <section className="container mt-1">
             <div className="row">
 
-                <div className='row'>
+                    {/* FUNCTION  + ROW*/}
                     <div
                         className={
-                            (bmi() >= 0 && bmi() <= 18.4) ? "border border-2 border-warning calculate d-flex" :
-                            (bmi() >= 18.5 && bmi() <= 24.9) ? "border border-2 border-success calculate d-flex" :
-                            (bmi() >= 25 && bmi() <= 29.9) ? "border border-2 border-primary calculate d-flex" :
-                            (bmi() >= 30 && bmi() <= 34.9) ? "border border-2 border-dark calculate d-flex" :
-                            (bmi() > 35) ? "border border-2 border-danger calculate d-flex" : "border border-2 calculate d-flex"
+                            (bmi() >= 0 && bmi() <= 18.4) ? "border border-2 border-warning calculate row " :
+                            (bmi() >= 18.5 && bmi() <= 24.9) ? "border border-2 border-success calculate row" :
+                            (bmi() >= 25 && bmi() <= 29.9) ? "border border-2 border-primary calculate row" :
+                            (bmi() >= 30 && bmi() <= 34.9) ? "border border-2 border-dark calculate row" :
+                            (bmi() > 35) ? "border border-2 border-danger calculate row" : "border border-2 calculate row"
                         }
                     >
-
-                        <div className='col-6 mt-3 ms-2'>
+                        {/* RESULT  */}
+                        <div className='col-sm-12 col-md-12 col-lg-5 col-xl-6  mt-3 ms-2 order-1 order-lg-1'>
 
                             <h3>
                                 Gender: <span className={gender === "Male" ? 'calculate-result text-primary' : 'calculate-result text-danger'}>
@@ -168,7 +168,8 @@ function Calculate({
                             </button>
                         </div>
 
-                        <div className='col-2'>
+                        {/* GIF CONTENT */}
+                        <div className='col-sm-6 col-md-6 col-lg-3 col-xl-2 order-3 order-lg-1'>
                             <GifContent bmi={bmi()}
                                 resultGif={resultGif} setResultGif={setResultGif}
                                 gifZ={gifZ} setGifZ={setGifZ} gifN={gifN} setGifN={setGifN}
@@ -177,7 +178,8 @@ function Calculate({
                             />
                         </div>
 
-                        <div className='col-4 call'>
+                        {/* INFO */}
+                        <div className='col-sm-6 col-md-6 col-lg-3 col-xl-3  call order-2 order-lg-1'>
                             <ul>
                                 <h3 className='text-dark'>Yaş aralığına göre ise kişinin <span className='text-primary'>ideal vücut kitle indeksi</span> şu şekildedir:</h3>
 
@@ -195,7 +197,6 @@ function Calculate({
                 {/* alikartalonline footer  */}
                 <Footer />
 
-            </div>
         </section>
     )
 };
